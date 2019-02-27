@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-12">
+    <highcharts-chart
+    [Highcharts]="columnHighcharts"
+
+    [constructorType]="columnChartConstructor"
+    [options]="columnChartOptions"
+    [callbackFunction]="columnChartCallback"
+
+    [(update)]="columnUpdateFlag"
+    [oneToOne]="columnOneToOneFlag"
+    [runOutsideAngular]="columnRunOutsideAngularFlag"
+
+    style="width: 800px; height: 600px; display: block;"
+  >
+  </highcharts-chart>
+</div>
+</div>

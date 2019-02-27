@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("assets/css/sb-admin.scss");
+@import url("assets/css/sb-admin.min.scss");
+@import url("../node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
+
+.logoCol {
+    color: white !important; 
+    font-weight: 600;
+}
+
+.colWhite {
+    color: white !important;
+}
+
+.router-link-active{
+    background-color: #007bff;
+}

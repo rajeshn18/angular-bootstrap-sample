@@ -1,0 +1,114 @@
+ <!-- Breadcrumbs-->
+ <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="#">Dashboard</a>
+    </li>
+    <li class="breadcrumb-item active">Overview</li>
+  </ol>
+  <div class="row">
+    <div class="col-xl-4 col-sm-6 mb-4">
+      <div class="card text-white bg-primary o-hidden h-100">
+        <div class="card-body">
+          <div class="card-body-icon">
+            <i class="fas fa-fw fa-comments"></i>
+          </div>
+          <div class="mr-5">Door Position 1</div>
+        </div>
+        <div class="card-footer text-white clearfix small z-1" >
+          <span class="float-left">{{doorPos1Val}}</span>
+          <span class="float-right">
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-sm-6 mb-4">
+      <div class="card text-white bg-warning o-hidden h-100">
+        <div class="card-body">
+          <div class="card-body-icon">
+            <i class="fas fa-fw fa-list"></i>
+          </div>
+          <div class="mr-5">Door Position 2</div>
+        </div>
+        <div class="card-footer text-white clearfix small z-1" >
+          <span class="float-left">{{doorPos2Val}}</span>
+          <span class="float-right">
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-sm-6 mb-4">
+      <div class="card text-white bg-success o-hidden h-100">
+        <div class="card-body">
+          <div class="card-body-icon">
+            <i class="fas fa-fw fa-shopping-cart"></i>
+          </div>
+          <div class="mr-5">Drive Phase</div>
+        </div>
+        <div class="card-footer text-white clearfix small z-1">
+          <span class="float-left">{{drivePhaseVal}}</span>
+          <span class="float-right">
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+  <div class="col-md-12" (click)="openDialog()">
+   Show Data 
+  </div>
+  
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+        <highcharts-chart
+        [Highcharts]="Highcharts"
+    
+        [constructorType]="chartConstructor"
+        [options]="chartOptions"
+        [callbackFunction]="chartCallback"
+    
+        [(update)]="updateFlag"
+        [oneToOne]="oneToOneFlag"
+        [runOutsideAngular]="runOutsideAngularFlag"
+    
+        style="width: 400px; height: 400px; display: block;"
+      >
+      </highcharts-chart>
+    </div>
+    <div class="col-md-6">
+        <highcharts-chart
+        [Highcharts]="barHighcharts"
+    
+        [constructorType]="barChartConstructor"
+        [options]="barChartOptions"
+        [callbackFunction]="barChartCallback"
+    
+        [(update)]="barUpdateFlag"
+        [oneToOne]="barOneToOneFlag"
+        [runOutsideAngular]="barRunOutsideAngularFlag"
+    
+        style="width: 400px; height: 400px; display: block;"
+      >
+      </highcharts-chart>
+    </div>    
+</div>
+<div class="row">&nbsp;</div>
+<div class="row">
+  <div class="col-md-6">
+    <highcharts-chart
+    [Highcharts]="columnHighcharts"
+
+    [constructorType]="columnChartConstructor"
+    [options]="columnChartOptions"
+    [callbackFunction]="columnChartCallback"
+
+    [(update)]="columnUpdateFlag"
+    [oneToOne]="columnOneToOneFlag"
+    [runOutsideAngular]="columnRunOutsideAngularFlag"
+
+    style="width: 600px; height: 400px; display: block;"
+  >
+  </highcharts-chart>
+</div>
+</div>

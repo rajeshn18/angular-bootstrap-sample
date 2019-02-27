@@ -1,0 +1,47 @@
+<div id="dashboard">
+<h1 mat-dialog-title>Elevator Heading</h1>
+<div mat-dialog-content>
+  
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Time Column -->
+    <ng-container matColumnDef="time">
+      <th mat-header-cell *matHeaderCellDef> Time </th>
+      <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+    </ng-container>
+  
+    <!-- DoorPos1 Column -->
+    <ng-container matColumnDef="doorPos1">
+      <th mat-header-cell *matHeaderCellDef> Door Position 1 </th>
+      <td mat-cell *matCellDef="let element"> {{element.doorPos1}} </td>
+    </ng-container>
+  
+    <!-- DoorPos2 Column -->
+    <ng-container matColumnDef="doorPos2">
+      <th mat-header-cell *matHeaderCellDef> Door Position 2 </th>
+      <td mat-cell *matCellDef="let element"> {{element.doorPos2}} </td>
+    </ng-container>
+  
+    <!-- DrivePhase Column -->
+    <ng-container matColumnDef="drivePhase">
+      <th mat-header-cell *matHeaderCellDef> Drive Phase </th>
+      <td mat-cell *matCellDef="let element"> {{element.drivePhase}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>
+<div mat-dialog-actions>
+  <!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <button class="btn-primary" mat-button [mat-dialog-close]="" cdkFocusInitial>Close</button>
+</div>
+</div>
+<div id="cabinPos">
+  <h1 mat-dialog-title>Elevator Cabin Position</h1>
+</div>
