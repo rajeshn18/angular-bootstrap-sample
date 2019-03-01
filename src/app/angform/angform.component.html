@@ -34,41 +34,59 @@
 </form> -->
 
 <div class="row">
-    <div class="col-md-8 offset-md-2">
-        <h3>User Form</h3>
-        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-            <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required />
-                <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
-                    <div *ngIf="firstName.errors.required">First Name is required</div>
+    <div class="col-md-8 offset-md-0">
+        <h5 class="col-sm-10 offset-md-2"  >Enter Configuration Details</h5>
+        <div class="row">&nbsp;</div>
+        <form   name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label" for="maxDriveTrips">Max Acceptable Drive Trips</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" name="maxDriveTrips" [(ngModel)]="model.maxDriveTrips" #maxDriveTrips="ngModel" [ngClass]="{ 'is-invalid': f.submitted && maxDriveTrips.invalid }" required min="1" max="100" />
+                    <div *ngIf="f.submitted && maxDriveTrips.invalid" class="invalid-feedback">
+                        <div *ngIf="maxDriveTrips.errors.required; else invalidInput">Required</div>
+                        <ng-template #invalidInput>
+                                Value should be in range of 1-100
+                            </ng-template>
+                            
+                        <!-- <div *ngIf="maxDriveTrips.invalid && !maxDriveTrips.errors.required">Value should be in range of 1-100</div> -->
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required />
-                <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
-                    <div *ngIf="lastName.errors.required">Last Name is required</div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label" for="maxDoorTrips">Max Acceptable Door Trips</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" name="maxDoorTrips" [(ngModel)]="model.maxDoorTrips" #maxDoorTrips="ngModel" [ngClass]="{ 'is-invalid': f.submitted && maxDoorTrips.invalid }" required min="1" max="100" />
+                    <div *ngIf="f.submitted && maxDoorTrips.invalid" class="invalid-feedback">
+                        <div *ngIf="maxDoorTrips.errors.required">Required</div>
+                        <div *ngIf="maxDoorTrips.invalid && !maxDoorTrips.errors.required">Value should be in range of 1-100</div>
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
-                <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
-                    <div *ngIf="email.errors.required">Email is required</div>
-                    <div *ngIf="email.errors.email">Email must be a valid email address</div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label" for="maxDriveCurrent">Max Acceptable Drive Current</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" name="maxDriveCurrent" [(ngModel)]="model.maxDriveCurrent" #maxDriveCurrent="ngModel" [ngClass]="{ 'is-invalid': f.submitted && maxDriveCurrent.invalid }" required min="1" max="100"/>
+                    <div *ngIf="f.submitted && maxDriveCurrent.invalid" class="invalid-feedback">
+                        <div *ngIf="maxDriveCurrent.errors.required">Required</div>
+                        <div *ngIf="maxDriveCurrent.invalid && !maxDriveCurrent.errors.required">Value should be in range of 1-100</div>
+                        <!-- <div *ngIf="maxDriveCurrent.errors.email">Email must be a valid email address</div> -->
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" />
-                <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
-                    <div *ngIf="password.errors.required">Password is required</div>
-                    <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label" for="maxDoorCurrent">Max Acceptable Door Current</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" name="maxDoorCurrent" [(ngModel)]="model.maxDoorCurrent" #maxDoorCurrent="ngModel" [ngClass]="{ 'is-invalid': f.submitted && maxDoorCurrent.invalid }" required min="1" max="100" />
+                    <div *ngIf="f.submitted && maxDoorCurrent.invalid" class="invalid-feedback">
+                        <div *ngIf="maxDoorCurrent.errors.required">Required</div>
+                        <div *ngIf="maxDoorCurrent.invalid && !maxDoorCurrent.errors.required">Value should be in range of 1-100</div>
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <button class="btn btn-primary">Register</button>
+            <div class="form-group row ">
+                <div class="col-sm-8 offset-md-4">
+                    <button class="btn btn-primary ">Save Configuration</button>
+                </div>
             </div>
         </form>
     </div>

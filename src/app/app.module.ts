@@ -14,6 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule } from '@angular/material';
 import { AngformComponent } from './angform/angform.component';
 import {FormsModule} from "@angular/forms";
+import { MinDirective, MaxDirective } from './angform/angform.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/dashboard',
@@ -34,7 +37,9 @@ const appRoutes: Routes = [
     DrivePhaseComponent,
     CabinPositionComponent,
     ElevatorDialogComponent,
-    AngformComponent
+    AngformComponent,
+    MinDirective,
+    MaxDirective
     //
   ],
   imports: [
@@ -45,6 +50,7 @@ const appRoutes: Routes = [
     MatDialogModule,
     MatTableModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
